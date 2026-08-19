@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+
+# uploads (user-generated)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# env
+.env
+.env.local
+
+# debug
+npm-debug.log*
+node_modules/
+.next/
+dist/
+out/
+.cache/
+*.lognode_modules/
+.next/
+node_modules/
+.next/
