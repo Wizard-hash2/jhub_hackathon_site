@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.env
+.env.local
+*.log
+tsconfig.tsbuildinfo
+Dockerfile
+docker-compose.yml
+.dockerignore
+Images/
+drizzle/meta
+public/uploads
+README.md

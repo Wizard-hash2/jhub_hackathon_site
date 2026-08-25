@@ -34,7 +34,7 @@ export function SiteFooter() {
         </nav>
 
         <p className="text-sm text-mist">
-          &copy; 2024 JHUB Africa &amp; JKUAT. All rights reserved.
+          &copy; 2026 JHUB Africa &amp; JKUAT. All rights reserved.
         </p>
       </div>
     </footer>

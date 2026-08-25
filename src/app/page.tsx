@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getHackathons } from "@/lib/hackathons";
 import { HackathonsExplorer } from "@/components/hackathons-explorer";
 
@@ -16,6 +17,24 @@ export default async function HackathonsHomePage() {
         <p className="mx-auto mt-5 max-w-xl text-base text-mist sm:text-lg">
           Join the next generation of builders at JHUB Africa &amp; JKUAT hackathons.
         </p>
+        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 sm:gap-6">
+          <Image
+            src="/images/green-code-background-hacking-in-progress.webp"
+            alt="Hacking in progress with green code on screen"
+            width={500}
+            height={335}
+            priority
+            className="h-full w-full rounded-xl border border-edge-soft object-cover shadow-lg"
+          />
+          <Image
+            src="/images/group-people-working-laptops-room-hackathon-event_706399-17237.webp"
+            alt="Team collaborating on laptops at a hackathon event"
+            width={500}
+            height={280}
+            priority
+            className="h-full w-full rounded-xl border border-edge-soft object-cover shadow-lg"
+          />
+        </div>
       </section>
 
       <HackathonsExplorer hackathons={hackathons} />

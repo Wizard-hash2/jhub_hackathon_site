@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { logoutAction } from "@/lib/auth-actions";
 import {
   BookOpenIcon,
   CalendarCheckIcon,
@@ -36,11 +37,6 @@ const NAV: NavItem[] = [
   { label: "Participants", href: "/admin/participants", icon: <UsersIcon className="h-5 w-5" /> },
   { label: "Submissions", href: "/admin/submissions", icon: <FileTextIcon className="h-5 w-5" /> },
   { label: "Settings", href: "/admin/settings", icon: <CogIcon className="h-5 w-5" /> },
-];
-
-const SECONDARY_NAV: NavItem[] = [
-  { label: "Help Center", href: "/support", icon: <HelpCircleIcon className="h-5 w-5" /> },
-  { label: "Logout", href: "/login", icon: <LogoutIcon className="h-5 w-5" /> },
 ];
 
 export function AdminSidebar() {
@@ -93,16 +89,22 @@ export function AdminSidebar() {
       </nav>
 
       <div className="border-t border-edge-soft px-3 py-4">
-        {SECONDARY_NAV.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-mist transition-colors hover:bg-ink/40 hover:text-white"
+        <Link
+          href="/support"
+          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-mist transition-colors hover:bg-ink/40 hover:text-white"
+        >
+          <span className="text-fog">{<HelpCircleIcon className="h-5 w-5" />}</span>
+          Help Center
+        </Link>
+        <form action={logoutAction}>
+          <button
+            type="submit"
+            className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-mist transition-colors hover:bg-ink/40 hover:text-white"
           >
-            <span className="text-fog">{item.icon}</span>
-            {item.label}
-          </Link>
-        ))}
+            <span className="text-fog">{<LogoutIcon className="h-5 w-5" />}</span>
+            Logout
+          </button>
+        </form>
       </div>
     </aside>
   );

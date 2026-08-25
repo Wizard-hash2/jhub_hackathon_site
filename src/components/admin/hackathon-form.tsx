@@ -205,8 +205,10 @@ export function HackathonForm() {
       const formData = new FormData();
       formData.append("file", file);
       const res = await fetch("/api/upload", { method: "POST", body: formData });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Upload failed.");
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data?.url) {
+        throw new Error(data?.error || `Upload failed (${res.status}).`);
+      }
       // Set the image URL from the server response
       update("imageUrl", data.url);
       // Clear the local preview since we now have the real URL

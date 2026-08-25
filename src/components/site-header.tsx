@@ -77,18 +77,6 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Link href="/login" className="text-sm text-mist transition-colors hover:text-white">
-            Login
-          </Link>
-          <Link
-            href="/register"
-            className="rounded-lg bg-rose px-4 py-2 text-sm font-semibold text-[#2a1414] transition-opacity hover:opacity-90"
-          >
-            Register
-          </Link>
-        </div>
-
         {/* Mobile menu toggle */}
         <button
           type="button"
@@ -120,22 +108,6 @@ export function SiteHeader() {
                 </Link>
               );
             })}
-          </div>
-          <div className="mt-4 flex items-center gap-3 border-t border-edge-soft pt-4">
-            <Link
-              href="/login"
-              onClick={() => setOpen(false)}
-              className="flex-1 rounded-lg border border-edge px-4 py-2.5 text-center text-sm text-mist hover:text-white"
-            >
-              Login
-            </Link>
-            <Link
-              href="/register"
-              onClick={() => setOpen(false)}
-              className="flex-1 rounded-lg bg-rose px-4 py-2.5 text-center text-sm font-semibold text-[#2a1414]"
-            >
-              Register
-            </Link>
           </div>
         </nav>
       )}
